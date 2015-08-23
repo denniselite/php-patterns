@@ -1,0 +1,13 @@
+{
+    "name": "denniselite/php-patterns",
+    "description": "Some patterns implementation on PHP",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Denis Podlesnykh",
+            "email": "denniselite@live.com"
+        }
+    ],
+    "require": {}
+}
