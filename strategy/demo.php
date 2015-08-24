@@ -8,21 +8,6 @@
 
 namespace PhpPatterns\Strategy;
 
-
-require_once('fly/IFlyable.php');
-require_once('fly/FlyWithWings.php');
-require_once('fly/NoFly.php');
-require_once('quack/IQuackable.php');
-require_once('quack/SimpleQuack.php');
-require_once('quack/ExoticQuack.php');
-require_once('quack/NoQuack.php');
-require_once('ducks/DuckBase.php');
-require_once('ducks/SimpleDuck.php');
-require_once('ducks/ExoticDuck.php');
-require_once('ducks/WoodenDuck.php');
-require_once('ducks/RubberDuck.php');
-require_once('ducks/UpgradableDuck.php');
-
 use PhpPatterns\Strategy\Ducks\DuckBase;
 use PhpPatterns\Strategy\Ducks\ExoticDuck;
 use PhpPatterns\Strategy\Ducks\RubberDuck;

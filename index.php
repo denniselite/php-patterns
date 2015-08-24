@@ -8,7 +8,8 @@
 
 namespace PhpPatterns;
 
-require_once('strategy/Demo.php');
+require_once('required.php');
+
 use PhpPatterns\Strategy;
 
 $strategyDemo = new Strategy\Demo();
