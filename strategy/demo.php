@@ -8,9 +8,12 @@
 
 namespace PhpPatterns\Strategy;
 
+
+require_once('fly/IFlyable.php');
+require_once('fly/FlyWithWings.php');
+require_once('quack/IQuackable.php');
+require_once('quack/SimpleQuack.php');
 require_once('ducks/DuckBase.php');
-require_once('ducks/IFlyable.php');
-require_once('ducks/IQuackable.php');
 require_once('ducks/SimpleDuck.php');
 require_once('ducks/ExoticDuck.php');
 require_once('ducks/WoodenDuck.php');
@@ -18,8 +21,6 @@ require_once('ducks/RubberDuck.php');
 
 use PhpPatterns\Strategy\Ducks\DuckBase;
 use PhpPatterns\Strategy\Ducks\ExoticDuck;
-use PhpPatterns\Strategy\Ducks\IFlyable;
-use PhpPatterns\Strategy\Ducks\IQuackable;
 use PhpPatterns\Strategy\Ducks\RubberDuck;
 use PhpPatterns\Strategy\Ducks\SimpleDuck;
 use PhpPatterns\Strategy\Ducks\WoodenDuck;
@@ -40,20 +41,8 @@ class Demo
         foreach ($ducksList as $duck) {
             $duck->display();
             $duck->swim();
-            if ($duck instanceof IQuackable) {
-
-                /**
-                 * @var $duck IQuackable
-                 */
-                $duck->quack();
-            }
-            if ($duck instanceof IFlyable) {
-
-                /**
-                 * @var $duck IFlyable
-                 */
-                $duck->fly();
-            }
+            $duck->quack();
+            $duck->fly();
         }
     }
 }

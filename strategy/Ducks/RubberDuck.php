@@ -9,13 +9,8 @@
 namespace PhpPatterns\Strategy\Ducks;
 
 
-class RubberDuck extends DuckBase implements IQuackable
+class RubberDuck extends DuckBase
 {
-    public function quack()
-    {
-        echo "Quack! Quack!\n";
-    }
-
     public function display()
     {
         echo "Hi! I'm a rubber duck!\n";

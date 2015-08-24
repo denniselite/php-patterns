@@ -9,20 +9,10 @@
 namespace PhpPatterns\Strategy\Ducks;
 
 
-class ExoticDuck extends DuckBase implements IQuackable, IFlyable
+class ExoticDuck extends DuckBase
 {
     public function display()
     {
         echo "Hi! I'm a exotic duck!\n";
-    }
-
-    public function quack()
-    {
-        echo "Quack! Quack!\n";
-    }
-
-    public function fly()
-    {
-        echo "I'm flying!\n";
     }
 }

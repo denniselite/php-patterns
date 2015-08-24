@@ -9,20 +9,10 @@
 namespace PhpPatterns\Strategy\Ducks;
 
 
-class SimpleDuck extends DuckBase implements IQuackable, IFlyable
+class SimpleDuck extends DuckBase
 {
     public function display()
     {
         echo "Hi! I'm a simple duck!\n";
-    }
-
-    public function quack()
-    {
-        echo "Quack! Quack!\n";
-    }
-
-    public function fly()
-    {
-        echo "I'm flying!\n";
     }
 }

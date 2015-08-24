@@ -6,7 +6,7 @@
  * Time: 14:13
  */
 
-namespace PhpPatterns\Strategy\Ducks;
+namespace PhpPatterns\Strategy\Fly;
 
 
 interface IFlyable
