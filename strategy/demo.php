@@ -11,8 +11,10 @@ namespace PhpPatterns\Strategy;
 
 require_once('fly/IFlyable.php');
 require_once('fly/FlyWithWings.php');
+require_once('fly/NoFly.php');
 require_once('quack/IQuackable.php');
 require_once('quack/SimpleQuack.php');
+require_once('quack/NoQuack.php');
 require_once('ducks/DuckBase.php');
 require_once('ducks/SimpleDuck.php');
 require_once('ducks/ExoticDuck.php');
@@ -43,6 +45,7 @@ class Demo
             $duck->swim();
             $duck->quack();
             $duck->fly();
+            echo "\n";
         }
     }
 }

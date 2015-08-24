@@ -8,9 +8,19 @@
 
 namespace PhpPatterns\Strategy\Ducks;
 
+use PhpPatterns\Strategy\Fly\NoFly;
+use PhpPatterns\Strategy\Quack\NoQuack;
 
 class WoodenDuck extends DuckBase
 {
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->flyBehaviour = new NoFly;
+        $this->quackBehaviour = new NoQuack;
+    }
+
     public function display()
     {
         echo "Hi! I'm a wooden duck!\n";
