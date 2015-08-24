@@ -10,5 +10,8 @@ namespace PhpPatterns\Strategy\Fly;
 
 class NoFly implements IFlyable
 {
-    public function fly(){}
+    public function fly()
+    {
+        echo "---\n";
+    }
 }

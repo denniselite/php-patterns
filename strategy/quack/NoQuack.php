@@ -11,5 +11,8 @@ namespace PhpPatterns\Strategy\Quack;
 
 class NoQuack implements IQuackable
 {
-    public function quack(){}
+    public function quack()
+    {
+        echo "...\n";
+    }
 }

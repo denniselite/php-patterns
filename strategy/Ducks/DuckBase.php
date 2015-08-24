@@ -8,18 +8,20 @@
 
 namespace PhpPatterns\Strategy\Ducks;
 
+use PhpPatterns\Strategy\Fly\IFlyable;
+use PhpPatterns\Strategy\Quack\IQuackable;
 use PhpPatterns\Strategy\Quack\SimpleQuack;
 use PhpPatterns\Strategy\Fly\FlyWithWings;
 
 abstract class DuckBase{
 
     /**
-     * @var $flyBehaviour FlyWithWings
+     * @var $flyBehaviour IFlyable
      */
     protected $flyBehaviour;
 
     /**
-     * @var $flyBehaviour SimpleQuack
+     * @var $flyBehaviour IQuackable
      */
     protected $quackBehaviour;
 
@@ -27,6 +29,22 @@ abstract class DuckBase{
     public function __construct(){
         $this->flyBehaviour = new FlyWithWings;
         $this->quackBehaviour = new SimpleQuack;
+    }
+
+    /**
+     * @param $quackBehaviour IQuackable
+     */
+    public function setQuackBehaviour($quackBehaviour)
+    {
+        $this->quackBehaviour = $quackBehaviour;
+    }
+
+    /**
+     * @param $flyBehaviour IFlyable
+     */
+    public function setFlyBehaviour($flyBehaviour)
+    {
+        $this->flyBehaviour = $flyBehaviour;
     }
 
     public function quack()
