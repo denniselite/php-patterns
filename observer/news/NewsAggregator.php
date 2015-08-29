@@ -44,9 +44,9 @@ class NewsAggregator
     public function getTechCrunchNews()
     {
         $news = [
-            'First article on TechCrunch',
-            'Second article on TechCrunch',
-            'Third article on TechCrunch',
+            "First article on TechCrunch\n",
+            "Second article on TechCrunch\n",
+            "Third article on TechCrunch\n"
         ];
         return $news[rand(0, 2)];
     }
@@ -57,9 +57,9 @@ class NewsAggregator
     public function getTvNews()
     {
         $news = [
-            'First article on TV',
-            'Second article on TV',
-            'Third article on TV',
+            "First article on TV\n",
+            "Second article on TV\n",
+            "Third article on TV\n"
         ];
         return $news[rand(0, 2)];
     }
@@ -70,9 +70,9 @@ class NewsAggregator
     public function getTwitterhNews()
     {
         $news = [
-            'First article on Twitter',
-            'Second article on Twitter',
-            'Third article on Twitter',
+            "First article on Twitter\n",
+            "Second article on Twitter\n",
+            "Third article on Twitter\n"
         ];
         return $news[rand(0, 2)];
     }

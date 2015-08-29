@@ -6,6 +6,18 @@
  * Time: 0:08
  */
 
+/**
+ * Observer required source files
+ */
+require_once('observer/Demo.php');
+require_once('observer/news/NewsAggregator.php');
+require_once('observer/widgets/TechCrunchWidget.php');
+require_once('observer/widgets/TvWidget.php');
+require_once('observer/widgets/TwitterWidget.php');
+
+/**
+ * Strategy required source files
+ */
 require_once('strategy/Demo.php');
 require_once('strategy/fly/IFlyable.php');
 require_once('strategy/fly/FlyWithWings.php');

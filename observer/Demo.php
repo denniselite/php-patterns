@@ -8,11 +8,16 @@
 
 namespace PhpPatterns\Observer;
 
+use PhpPatterns\Observer\News\NewsAggregator;
 
 class Demo
 {
     public function run()
     {
+        $newsAggregator = new NewsAggregator;
 
+        $newsAggregator->newNewAvailable();
+        echo "\n";
+        $newsAggregator->newNewAvailable();
     }
 }
