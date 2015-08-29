@@ -11,6 +11,7 @@
  */
 require_once('observer/Demo.php');
 require_once('observer/news/NewsAggregator.php');
+require_once('observer/widgets/IWidget.php');
 require_once('observer/widgets/TechCrunchWidget.php');
 require_once('observer/widgets/TvWidget.php');
 require_once('observer/widgets/TwitterWidget.php');
