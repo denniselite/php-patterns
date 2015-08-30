@@ -9,15 +9,35 @@
 namespace PhpPatterns\Observer\Widgets;
 
 
-class TechCrunchWidget
+use PhpPatterns\Observer\News\ISubject;
+
+class TechCrunchWidget implements IObserver
 {
     /**
-     * @param $twitter string
-     * @param $techCrunch string
-     * @param $tv string
+     * @var string
+     */
+    private $techCrunch;
+
+    /**
+     * @param ISubject $subject
+     */
+    public function __construct($subject)
+    {
+        $subject->registerObserver($this);
+    }
+    /**
+     * @param string $twitter
+     * @param string $techCrunch
+     * @param string $tv
      */
     public function update($twitter, $techCrunch, $tv)
     {
-        echo "TechCrunch: ".$techCrunch;
+        $this->techCrunch = $techCrunch;
+        $this->display();
+    }
+
+    public function display()
+    {
+        echo "TechCrunch: ".$this->techCrunch;
     }
 }

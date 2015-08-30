@@ -16,12 +16,12 @@ use PhpPatterns\Strategy\Fly\FlyWithWings;
 abstract class DuckBase{
 
     /**
-     * @var $flyBehaviour IFlyable
+     * @var IFlyable $flyBehaviour
      */
     protected $flyBehaviour;
 
     /**
-     * @var $flyBehaviour IQuackable
+     * @var  IQuackable $flyBehaviour
      */
     protected $quackBehaviour;
 
@@ -32,7 +32,7 @@ abstract class DuckBase{
     }
 
     /**
-     * @param $quackBehaviour IQuackable
+     * @param IQuackable $quackBehaviour
      */
     public function setQuackBehaviour($quackBehaviour)
     {
@@ -40,7 +40,7 @@ abstract class DuckBase{
     }
 
     /**
-     * @param $flyBehaviour IFlyable
+     * @param IFlyable $flyBehaviour
      */
     public function setFlyBehaviour($flyBehaviour)
     {

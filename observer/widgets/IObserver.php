@@ -9,14 +9,14 @@
 namespace PhpPatterns\Observer\Widgets;
 
 
-interface IWidget
+interface IObserver
 {
     /**
-     * @param $twitter string
-     * @param $techCrunch string
-     * @param $tv string
-     * @return mixed
+     * @param string $twitter
+     * @param string $techCrunch
+     * @param string $tv
      */
     public function update($twitter, $techCrunch, $tv);
+
     public function display();
 }

@@ -22,13 +22,13 @@ class Demo
     public function run()
     {
         $ducksList = [];
-        array_push($ducksList, (new SimpleDuck));
-        array_push($ducksList, (new ExoticDuck));
-        array_push($ducksList, (new WoodenDuck));
-        array_push($ducksList, (new RubberDuck));
+        $ducksList[] = new SimpleDuck;
+        $ducksList[] = new ExoticDuck;
+        $ducksList[] = new WoodenDuck;
+        $ducksList[] = new RubberDuck;
 
         /**
-         * @var $duck DuckBase
+         * @var DuckBase $duck
          */
         foreach ($ducksList as $duck) {
             $duck->display();

@@ -9,33 +9,52 @@
 namespace PhpPatterns\Observer\News;
 
 
-use PhpPatterns\Observer\Widgets\TechCrunchWidget;
-use PhpPatterns\Observer\Widgets\TvWidget;
-use PhpPatterns\Observer\Widgets\TwitterWidget;
+use PhpPatterns\Observer\Widgets\IObserver;
 
-class NewsAggregator
+class NewsAggregator implements ISubject
 {
 
     /**
-     * @var TechCrunchWidget
+     * @var []
      */
-    private $_techCrunchWidget;
-
-    /**
-     * @var TvWidget
-     */
-    private $_tvWidget;
-
-    /**
-     * @var TwitterWidget
-     */
-    private $_twitterWidget;
+    private $observers;
 
     public function __construct()
     {
-        $this->_techCrunchWidget = new TechCrunchWidget;
-        $this->_tvWidget = new TvWidget;
-        $this->_twitterWidget = new TwitterWidget;
+        $this->observers = [];
+    }
+
+    /**
+     * @param IObserver $observer
+     */
+    public function registerObserver($observer)
+    {
+        $this->observers[] = $observer;
+    }
+
+    /**
+     * @param IObserver $observer
+     */
+    public function removeObserver($observer)
+    {
+        if ($key = array_search($observer, $this->observers)) {
+            unset($this->observers[$key]);
+        }
+    }
+
+    public function notifyObservers()
+    {
+
+        $techCrunch = $this->getTechCrunchNews();
+        $tv = $this->getTvNews();
+        $twitter = $this->getTwitterNews();
+
+        /**
+         * @var IObserver $observer
+         */
+        foreach ($this->observers as &$observer) {
+            $observer->update($twitter, $techCrunch, $tv);
+        }
     }
 
     /**
@@ -67,7 +86,7 @@ class NewsAggregator
     /**
      * @return string
      */
-    public function getTwitterhNews()
+    public function getTwitterNews()
     {
         $news = [
             "First article on Twitter\n",
@@ -79,12 +98,6 @@ class NewsAggregator
 
     public function newNewAvailable()
     {
-        $techCrunch = $this->getTechCrunchNews();
-        $tv = $this->getTvNews();
-        $twitter = $this->getTwitterhNews();
-
-        $this->_techCrunchWidget->update($twitter, $techCrunch, $tv);
-        $this->_tvWidget->update($twitter, $techCrunch, $tv);
-        $this->_twitterWidget->update($twitter, $techCrunch, $tv);
+        $this->notifyObservers();
     }
 }
