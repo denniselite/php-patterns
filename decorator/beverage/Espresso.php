@@ -22,30 +22,6 @@ class Espresso extends BeverageBase
      */
     public function getCost()
     {
-        return 150 + parent::getCost();
-    }
-
-    /**
-     * @return bool
-     */
-    public function hasMilk()
-    {
-        return false;
-    }
-
-    /**
-     * @return bool
-     */
-    public function hasSugar()
-    {
-        return false;
-    }
-
-    /**
-     * @return bool
-     */
-    public function hasChocolate()
-    {
-        return false;
+        return 150;
     }
 }

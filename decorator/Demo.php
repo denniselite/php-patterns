@@ -9,20 +9,40 @@
 namespace PhpPatterns\Decorator;
 
 
+use PhpPatterns\Decorator\Beverage\BeverageBase;
+use PhpPatterns\Decorator\Beverage\BlackTea;
 use PhpPatterns\Decorator\Beverage\Capuccino;
 use PhpPatterns\Decorator\Beverage\Espresso;
+use PhpPatterns\Decorator\Beverage\GreenTea;
 use PhpPatterns\Decorator\Beverage\HotChocolate;
+use PhpPatterns\Decorator\Decorators\MilkCondiment;
+use PhpPatterns\Decorator\Decorators\SugarCondiment;
 
 class Demo
 {
     public function run()
     {
-        $capuccino = new Capuccino;
-        $hotChocolate = new HotChocolate;
         $espresso = new Espresso;
+        $blackTea = new BlackTea;
+        $greenTea = new GreenTea;
 
-        printf("Beverage: %s; Price: %d \n", $capuccino->getDescription(), $capuccino->getCost());
-        printf("Beverage: %s; Price: %d \n", $hotChocolate->getDescription(), $hotChocolate->getCost());
-        printf("Beverage: %s; Price: %d \n", $espresso->getDescription(), $espresso->getCost());
+        static::printBeverage($espresso);
+        static::printBeverage($blackTea);
+        static::printBeverage($greenTea);
+        echo "---------------------\n";
+
+        $cappuccino = new SugarCondiment(new MilkCondiment(new Espresso));
+        static::printBeverage($cappuccino);
+
+        $greenTeaWithSugar = new SugarCondiment(new GreenTea);
+        static::printBeverage($greenTeaWithSugar);
+    }
+
+    /**
+     * @param BeverageBase $beverage
+     */
+    public static function printBeverage($beverage)
+    {
+        printf("Beverage: %s; Price: %d \n", $beverage->getDescription(), $beverage->getCost());
     }
 }

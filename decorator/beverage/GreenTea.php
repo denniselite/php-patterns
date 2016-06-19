@@ -3,18 +3,17 @@
  * Created by PhpStorm.
  * User: Denniselite
  * Date: 19.06.16
- * Time: 5:48
+ * Time: 7:19
  */
 
 namespace PhpPatterns\Decorator\Beverage;
 
 
-class BlackTea extends BeverageBase
+class GreenTea extends BeverageBase
 {
-
     public function __construct()
     {
-        $this->description = "Black tea from teabug";
+        $this->description = "Green leaf tea";
     }
 
     /**
@@ -22,6 +21,6 @@ class BlackTea extends BeverageBase
      */
     public function getCost()
     {
-        return 25;
+        return 125;
     }
 }

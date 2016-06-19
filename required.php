@@ -12,9 +12,12 @@
 require_once('decorator/Demo.php');
 require_once('decorator/beverage/BeverageBase.php');
 require_once('decorator/beverage/BlackTea.php');
-require_once('decorator/beverage/Capuccino.php');
 require_once('decorator/beverage/Espresso.php');
-require_once('decorator/beverage/HotChocolate.php');
+require_once('decorator/beverage/GreenTea.php');
+require_once('decorator/decorators/CondimentsDecoratorBase.php');
+require_once('decorator/decorators/ChocolateCondiment.php');
+require_once('decorator/decorators/MilkCondiment.php');
+require_once('decorator/decorators/SugarCondiment.php');
 
 /**
  * Observer required source files
