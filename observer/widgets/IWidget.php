@@ -8,6 +8,7 @@
 
 namespace PhpPatterns\Observer\Widgets;
 
+
 interface IWidget {
 
     public function display();

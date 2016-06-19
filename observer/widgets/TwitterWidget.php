@@ -8,6 +8,7 @@
 
 namespace PhpPatterns\Observer\Widgets;
 
+
 use PhpPatterns\Observer\News\ISubject;
 
 class TwitterWidget implements IObserver, IWidget
