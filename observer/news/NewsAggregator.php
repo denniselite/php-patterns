@@ -17,11 +17,11 @@ class NewsAggregator implements ISubject
     /**
      * @var []
      */
-    private $observers;
+    private $_observers;
 
     public function __construct()
     {
-        $this->observers = [];
+        $this->_observers = [];
     }
 
     /**
@@ -29,7 +29,7 @@ class NewsAggregator implements ISubject
      */
     public function registerObserver($observer)
     {
-        $this->observers[] = $observer;
+        $this->_observers[] = $observer;
     }
 
     /**
@@ -37,8 +37,8 @@ class NewsAggregator implements ISubject
      */
     public function removeObserver($observer)
     {
-        if ($key = array_search($observer, $this->observers)) {
-            unset($this->observers[$key]);
+        if ($key = array_search($observer, $this->_observers)) {
+            unset($this->_observers[$key]);
         }
     }
 
@@ -52,7 +52,7 @@ class NewsAggregator implements ISubject
         /**
          * @var IObserver $observer
          */
-        foreach ($this->observers as &$observer) {
+        foreach ($this->_observers as &$observer) {
             $observer->update($twitter, $techCrunch, $tv);
         }
     }

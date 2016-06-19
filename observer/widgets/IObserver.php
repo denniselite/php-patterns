@@ -18,5 +18,5 @@ interface IObserver
      */
     public function update($twitter, $techCrunch, $tv);
 
-    public function display();
+    public function removeFromSubject();
 }

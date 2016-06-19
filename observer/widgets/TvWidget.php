@@ -8,22 +8,27 @@
 
 namespace PhpPatterns\Observer\Widgets;
 
-
 use PhpPatterns\Observer\News\ISubject;
 
-class TvWidget implements IObserver
+class TvWidget implements IObserver, IWidget
 {
     /**
      * @var string
      */
-    private $tv;
+    private $_tv;
+
+    /**
+     * @var ISubject
+     */
+    private $_subject;
 
     /**
      * @param ISubject $subject
      */
     public function __construct($subject)
     {
-        $subject->registerObserver($this);
+        $this->_subject = $subject;
+        $this->_subject->registerObserver($this);
     }
     /**
      * @param string $twitter
@@ -32,12 +37,17 @@ class TvWidget implements IObserver
      */
     public function update($twitter, $techCrunch, $tv)
     {
-        $this->tv = $tv;
+        $this->_tv = $tv;
         $this->display();
     }
 
     public function display()
     {
-        echo "TV: ".$this->tv;
+        echo "TV: ".$this->_tv;
+    }
+
+    public function removeFromSubject()
+    {
+        $this->_subject->removeObserver($this);
     }
 }

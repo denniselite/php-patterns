@@ -24,6 +24,8 @@ class Demo
 
         $newsAggregator->newNewAvailable();
         echo "\n";
+        $twitterWidget->removeFromSubject();
         $newsAggregator->newNewAvailable();
+        echo "\n";
     }
 }

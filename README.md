@@ -4,7 +4,7 @@ Implementations some design patterns on PHP language.
 
 It is a console package and it doesn't require some web servers for working. You can just started it :
 
-`php index.php` in the home project directory.
+`php index.php <pattern_name>` in the home project directory.
 
 ## Strategy design pattern
 
