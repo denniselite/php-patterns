@@ -28,6 +28,12 @@ if (count($argv) < 2) {
             $observerDemo = new Observer\Demo();
             $observerDemo->run();
             break;
+        case "decorator" :
+            echo "Decorator pattern demo\n";
+            echo "=====================\n";
+            $observerDemo = new Decorator\Demo();
+            $observerDemo->run();
+            break;
         default:
             echo "Unknown command";
             break;

@@ -7,6 +7,16 @@
  */
 
 /**
+ * Decorator required source files
+ */
+require_once('decorator/Demo.php');
+require_once('decorator/beverage/BeverageBase.php');
+require_once('decorator/beverage/BlackTea.php');
+require_once('decorator/beverage/Capuccino.php');
+require_once('decorator/beverage/Espresso.php');
+require_once('decorator/beverage/HotChocolate.php');
+
+/**
  * Observer required source files
  */
 require_once('observer/Demo.php');
